@@ -53,13 +53,15 @@ export default defineConfig(({ command, mode }): UserConfig => {
       },
       port: 3000,
       host: '0.0.0.0',
-      allowedHosts: ['.kavia.ai'],
+      // Note: allowedHosts is not a standard Vite server option; removing to avoid startup errors.
     },
     preview: {
       headers: {
         // Do cache the server response in preview (non-adapter production build)
         "Cache-Control": "public, max-age=600",
       },
+      port: 3000,
+      host: '0.0.0.0',
     },
   };
 });
